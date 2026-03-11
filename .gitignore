@@ -1,13 +1,58 @@
-# Ignore the environment
-.venv/
+# ==========================================
+# 1. MACHINE LEARNING & MLFLOW OUTPUTS
+# ==========================================
+# Ignore all MLflow tracking data and saved models
+mlruns/
+*.joblib
+*.pkl
+*.skops
+*.h5
+*.onnx
+
+# Ignore locally generated evaluation reports
+classification_report.txt
+
+# ==========================================
+# 2. DATASETS (Crucial for Repo Health)
+# ==========================================
+# Never commit raw or processed data to Git!
+data/raw/
+data/processed/
+!data/sample_test_data.csv
+*.csv
+*.tsv
+*.parquet
+*.json
+*.sqlite
+*.db
+
+# ==========================================
+# 3. PYTHON & ENVIRONMENTS
+# ==========================================
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
 
-# Ignore data and models
-data/*
-!data/sample_structure.csv
-models/*.pt
-models/*.safetensors
+# Virtual Environments (I noticed you are using .venv!)
+.venv/
+venv/
+env/
+ENV/
 
-# Ignore secret keys
-.env
-wandb/
+# ==========================================
+# 4. JUPYTER NOTEBOOKS
+# ==========================================
+# Ignore notebook auto-saves and checkpoints
+.ipynb_checkpoints/
+
+# ==========================================
+# 5. OS & IDE FILES
+# ==========================================
+# VS Code / PyCharm / macOS hidden files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+*.cer
